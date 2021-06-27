@@ -50,12 +50,17 @@ app.use((error, req, res, next) => {
   res.json({ message: error.message || "Unknown Error Occured" });
 });
 
+const host = "0.0.0.0";
+const port = process.env.PORT || 8080;
+
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@cluster0.xhrwx.mongodb.net/${process.env.DB_NAME}`
   )
   .then((result) => {
-    app.listen(process.env.PORT || 8080);
+    app.listen(port, host, function () {
+      console.log("Server started.......");
+    });
     // console.log(result);
     console.log("database connected", { useUnifiedTopology: true });
   })
