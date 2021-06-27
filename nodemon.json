@@ -1,0 +1,8 @@
+{
+  "env": {
+    "DB_USER": "bharati",
+    "DB_PWD": "bharati",
+    "DB_NAME": "mern",
+    "JWT_KEY": "akshayshejwal_do_not_share_key"
+  }
+}
